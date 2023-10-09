@@ -215,12 +215,14 @@ public class MyOwnArrayList<E> {
         }
     }
 
-    public boolean equals() {
-        if (this.size != this.elementData.length) {
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
-        return true;
+        return this.hashCode() == o.hashCode();
     }
 
     /**
